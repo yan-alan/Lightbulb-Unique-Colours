@@ -13,13 +13,13 @@ class GraphBarView: UIView {
     //view setup
     var barView: UIView = {
         let view = UIView()
-        view.addCorners(5).setColor(.gray).done()
+        view.addCorners(5).setColor(UIColor(hex: 0xC5C5C5)).done()
         return view
     }()
     
     var innerBarView: UIView = {
         let view = UIView()
-        view.addCorners(5).setColor(.green).done()
+        view.addCorners(5).setColor(UIColor(hex: 0x91C1FF)).done()
         return view
     }()
     
