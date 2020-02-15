@@ -1,5 +1,5 @@
 # Lightbulb-Unique-Colours
-iOS Application that simulates picking n lightbulbs from a box of i lightbulbs, displaying how many unique colours were grabbed
+iOS Application that simulates picking n lightbulbs from a box of i lightbulbs, recording how many unique colours were grabbed and plots that data against the expected value.
 
 
 ## Features
@@ -11,5 +11,10 @@ iOS Application that simulates picking n lightbulbs from a box of i lightbulbs, 
 - A restart button
 
 
+## Future Improvements
+
+- Loading screen
+- Greater range of input support
+- More statistics integration
 
 
