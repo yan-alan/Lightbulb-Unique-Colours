@@ -20,6 +20,7 @@ class RunningViewController: UIViewController {
         super.viewDidLoad()
         //view connection, adds button targets and delegation for collection view setup
         runningView = RunningView()
+        runningView?.loadingView.restartButton.addTarget(self, action: #selector(popToRoot), for: .touchUpInside)
         runningView?.restartButton.addTarget(self, action: #selector(popToRoot), for: .touchUpInside)
         detailedRunningView = runningView?.detailedResults
         detailedRunningView.dismissButton.addTarget(self, action: #selector(shrinkView), for: .touchUpInside)

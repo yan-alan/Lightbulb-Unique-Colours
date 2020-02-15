@@ -32,6 +32,14 @@ class LoadingView: UIView {
         }
         return hStack
     }()
+    
+    var restartButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(hex: 0xDC4545)
+        button.addCorners(10).done()
+        button.setTitle("Cancel", for: .normal)
+        return button
+    }()
     override class var requiresConstraintBasedLayout: Bool {
         return true
     }
@@ -52,12 +60,18 @@ class LoadingView: UIView {
             .addLeading(constant: 20)
             .addTrailing(constant: -20)
             .addBottom(anchor: centerYAnchor, constant: 0).done()
-       
+        
+        restartButton.setSuperview(self)
+            .addCenterX()
+            .addHeight(withConstant: 30)
+            .addWidth(withConstant: 80)
+            .addBottomSafe(constant: -20).done()
+        
         loadingLabel.setSuperview(self)
-            .addBottomSafe(constant: -10)
-            .addHeight(withConstant: 40)
-            .addLeading(constant: 30)
-            .addTrailing(constant: -30).done()
+            .addBottom(anchor: restartButton.topAnchor, constant: -10)
+           .addHeight(withConstant: 40)
+           .addLeading(constant: 30)
+           .addTrailing(constant: -30).done()
        
         //schedules a timer to switch and scale lights for loading screen
         Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(runLights), userInfo: nil, repeats: true)
