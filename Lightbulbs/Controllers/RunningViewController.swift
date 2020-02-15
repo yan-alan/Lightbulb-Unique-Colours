@@ -106,8 +106,8 @@ class RunningViewController: UIViewController {
     private func runSimulation() {
         actualValueArray = []
         var expectedValueArray: [Int] = []
-        for _ in 0 ..< 10000 {
-            expectedValueArray.append(simulate()) //finds expected by running 10000 times
+        for _ in 0 ..< 3000 {
+            expectedValueArray.append(simulate()) //finds expected by running 3000 times
         }
         var expected = Double(expectedValueArray.reduce(0, +))/Double(expectedValueArray.count)
         expected *= 100
@@ -168,7 +168,7 @@ extension RunningViewController: UICollectionViewDelegateFlowLayout, UICollectio
         let score = model.numColours
         graphCell.graphView.innerBarView.userDefinedConstraintDict["height"]?.constant = (CGFloat(Double(actualValueArray[indexPath.item])/Double(score)) * (graphCell.graphView.barView.frame.height))
         graphCell.graphView.bottomLabel.text = "\(actualValueArray[indexPath.item])"
-        graphCell.graphView.nameLabel.text = "Run \(indexPath.item)"
+        graphCell.graphView.nameLabel.text = "Run \(indexPath.item+1)"
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
         }

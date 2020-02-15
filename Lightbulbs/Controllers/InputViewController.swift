@@ -72,7 +72,12 @@ class InputViewController: UIViewController {
                 let alert = UIAlertController(title: "Illegal Entry", message: "Entries cannot be less than zero", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-            } else {
+            }
+            else if(numColours > 120 || numEachColour > 120 || numLightbulbsDrawn > 120 || numberOfSimulations > 120) {
+                let alert = UIAlertController(title: "Illegal Entry", message: "Enter numbers less than 120", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else {
                 //if everything is good then we present the pushVC
                 pushVC.model = LightbulbParamaters(numColours: numColours, numEachColour: numEachColour, numOfChoices: numLightbulbsDrawn, numberOfSimulations: numberOfSimulations)
                 self.navigationController?.pushViewController(pushVC, animated: true)
