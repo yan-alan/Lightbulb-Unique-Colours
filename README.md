@@ -18,3 +18,10 @@ iOS Application that simulates picking n lightbulbs from a box of i lightbulbs, 
 - More statistics integration
 
 
+## UI Display
+
+![](media/gif-1.gif)
+
+## Screenshots
+
+![](media/screenshot-1.jpg)
